@@ -65,6 +65,11 @@ public class ToolController {
 			resp.setMessage("no Tool found with ID "+ id);
         return resp; 
     } 	  
-	    
+	
+	@GetMapping("/find/{id}") 
+    public Tool getTool(@PathVariable int id) { 
+        return toolServiceImpl.getDBTool(id); 
+    } 	
+	
 	  
 }

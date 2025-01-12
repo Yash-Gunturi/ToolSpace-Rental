@@ -5,8 +5,10 @@ package com.toolspace.web.service;
 
 import java.util.HashSet;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.toolspace.web.dao.ToolDAO;
 import com.toolspace.web.modal.Tool;
 
 /**
@@ -14,7 +16,9 @@ import com.toolspace.web.modal.Tool;
  */
 @Service
 public class ToolServiceImpl implements ToolService{
-		  
+		
+		@Autowired
+		ToolDAO toolDao;
 	    HashSet<Tool> toolList = new HashSet<Tool>(); 
 	    ToolServiceImpl(){
 	    	Tool t= new Tool();
@@ -39,5 +43,9 @@ public class ToolServiceImpl implements ToolService{
 	    public void addTool(Tool b) { 
 	        toolList.add(b); 
 	    } 
+	    
+	    public Tool getDBTool(int tool_id) {
+	    	return toolDao.getTool(tool_id);
+	    }
 
 }

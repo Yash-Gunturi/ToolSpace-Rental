@@ -3,7 +3,7 @@ Rental app for tools
 
 
 Database design: 
-
+-----------------
 CREATE TABLE user_type (
 	type_id int NOT NULL AUTO_INCREMENT,
 	type varchar(10),
@@ -49,3 +49,13 @@ CREATE TABLE rental (
 	FOREIGN KEY (rented_by) REFERENCES user_db(user_id)
 	
 );
+
+
+Run docker
+----------
+
+#Create Image
+docker build -t toolspace .
+
+#Run Container
+docker run -p 8080:8080 toolspace
