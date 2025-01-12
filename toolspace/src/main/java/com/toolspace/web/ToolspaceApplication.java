@@ -8,6 +8,6 @@ public class ToolspaceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ToolspaceApplication.class, args);
+		System.out.println("ToolSpace started 4");
 	}
-
 }
