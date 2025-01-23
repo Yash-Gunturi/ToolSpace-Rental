@@ -25,7 +25,7 @@ public class ToolController {
 	@Autowired
 	ToolServiceImpl toolServiceImpl; 
 	  
-	@PostMapping("/addtool") 
+	@PostMapping("/addAtool") 
 	public void addTool(@RequestBody Tool tool) { 
 		toolServiceImpl.addTool(tool); 
 	} 
@@ -34,7 +34,7 @@ public class ToolController {
     public HashSet<Tool> getAllTool() { 
         return toolServiceImpl.findAllTool(); 
     } 	 
-	@GetMapping("/findtools") 
+	@GetMapping("/findtools")
     public ToolResponse getAllTools() { 
 		ToolResponse resp = new ToolResponse();
 		HashSet<Tool> toolList =  toolServiceImpl.findAllTool(); 
@@ -43,6 +43,7 @@ public class ToolController {
 		} else {
 			resp.setMessage("No Tools found");
 		}
+		
         return resp;
     } 	 
 	    
@@ -71,5 +72,8 @@ public class ToolController {
         return toolServiceImpl.getDBTool(id); 
     } 	
 	
-	  
+	@PostMapping("/addtool")  
+	public boolean addToolToDB(@RequestBody Tool tool) { 
+        return toolServiceImpl.addToolToDB(tool); 
+    } 	
 }

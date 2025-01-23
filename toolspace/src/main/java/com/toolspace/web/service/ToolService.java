@@ -14,5 +14,6 @@ public interface ToolService {
 	 HashSet<Tool> findAllTool(); 
      Tool findToolByID(long id); 
      void addTool(Tool b); 
+     boolean addToolToDB(Tool tool);
 
 }

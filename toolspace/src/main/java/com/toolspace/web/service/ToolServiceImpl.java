@@ -47,5 +47,10 @@ public class ToolServiceImpl implements ToolService{
 	    public Tool getDBTool(int tool_id) {
 	    	return toolDao.getTool(tool_id);
 	    }
+	    
+		@Override
+		public boolean addToolToDB(Tool tool) {
+			return toolDao.addToolToDB(tool);
+		}
 
 }

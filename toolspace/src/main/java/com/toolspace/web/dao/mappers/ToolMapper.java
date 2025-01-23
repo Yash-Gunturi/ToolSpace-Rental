@@ -23,7 +23,7 @@ public class ToolMapper implements RowMapper<Tool>{
         tool.setTool_brand(rs.getString("tool_brand"));
         tool.setTool_owner(rs.getInt("tool_owner"));
         tool.setTool_name(rs.getString("tool_name")); 
-        tool.setTool_manufacturer(rs.getString("tool.manufacturer"));
+        tool.setTool_manufacturer(rs.getString("tool_manufacturer"));
         tool.setTool_description(rs.getString("tool_description")); 
         return tool; 
     } 
